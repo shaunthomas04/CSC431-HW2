@@ -1,0 +1,104 @@
+Text Tests
+
+TEST 1
+User Input: Hello World
+Modification: No
+
+Expected Output:
+Original and New Hash match
+
+Actual Output:
+Enter plaintext message: Hello World
+Original Hash:
+a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e
+Simulate data modification? (y/n): n
+New Hash:
+a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e
+Integrity Check PASSED: Data has not been altered.
+
+TEST 2
+User Input: How is it going?
+Modification: How is it going?
+
+Expected Output:
+Original and New Hash match
+
+Actual Output:
+Enter plaintext message: How is it going?
+Original Hash:
+d69fc8e2881dff9abfcd7277c6b927f6df2e2d073da5abd24467a600f80980c6
+Simulate data modification? (y/n): y
+Enter modified plaintext message: How is it going?
+New Hash:
+d69fc8e2881dff9abfcd7277c6b927f6df2e2d073da5abd24467a600f80980c6
+Integrity Check PASSED: Data has not been altered.
+
+Test 3
+User Input: This Test Will Fail
+Modification: This Test Fails
+
+Expected Output:
+Original and New Hash do not match and fail
+
+Actual Output:
+Enter plaintext message: This Test Will Fail
+Original Hash:
+de54ff5cc7390a4e06586c82eb37e7e168d793d515bd17ea8781789a8fa07536
+Simulate data modification? (y/n): y
+Enter modified plaintext message: This Test Fails
+New Hash:
+7ba3d7502ae13d941636d66ed236c43b2adbee8eea327b1136cfe911c02401ac
+Integrity Check FAILED: Data has been modified.
+
+File Tests
+TEST 1
+File Content: "hello from file"
+File Content Update: No
+
+Expected Output:
+Original and New Hash match
+
+Actual Output:
+Enter file path: testing.txt
+Original Hash:
+b087545321dcffd45fabd29cf14da81512e1cc87c3b66e39e274cf1c72fb7a97
+Simulate data modification? (y/n): n
+New Hash:
+b087545321dcffd45fabd29cf14da81512e1cc87c3b66e39e274cf1c72fb7a97
+Integrity Check PASSED: Data has not been altered.
+
+TEST 2
+File Content: "hello from file"
+File Content Update: "hello from file"
+
+Expected Output:
+Original and New Hash match
+
+Actual Output:
+Enter file path: testing.txt
+Original Hash:
+b087545321dcffd45fabd29cf14da81512e1cc87c3b66e39e274cf1c72fb7a97
+Simulate data modification? (y/n): y
+Modify the file externally, then press Enter.
+Re-enter file path: testing.txt
+New Hash:
+b087545321dcffd45fabd29cf14da81512e1cc87c3b66e39e274cf1c72fb7a97
+Integrity Check PASSED: Data has not been altered.
+
+TEST 2
+File Content: "hello from file"
+File Content Update: "goodbye from file"
+
+Expected Output:
+Original and New Hash do not match and fail
+
+Actual Output:
+Enter file path: testing.txt
+Original Hash:
+b087545321dcffd45fabd29cf14da81512e1cc87c3b66e39e274cf1c72fb7a97
+Simulate data modification? (y/n): y
+Modify the file externally, then press Enter.
+Re-enter file path: testing.txt
+New Hash:
+1d87531460946aa67001bd468f0f379de3835d41c61e500c0b3af82e0f31cdad
+Integrity Check FAILED: Data has been modified.
